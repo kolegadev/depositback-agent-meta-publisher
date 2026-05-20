@@ -1,0 +1,18 @@
+{
+  "workflow_id": "depositback-agent-meta-publisher-default",
+  "version": "1.0.0",
+  "agent": "meta-publisher",
+  "created": "2026-05-20T18:04:32.197937",
+  "description": "Default health-check workflow for Meta Publisher",
+  "steps": [
+    {
+      "id": "health_check",
+      "skill": "noop",
+      "params": {
+        "message": "Meta Publisher is operational"
+      }
+    }
+  ],
+  "on_success": "Write result to data/outbox/",
+  "on_failure": "Update state.json with error status"
+}
